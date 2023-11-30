@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+
+</head>
+
+<body style="background-color: rgb(50, 208, 137); align-items: center; text-align: center;">
+
+    <h2 style="color: rgb(46, 50, 47);">Let's play XO</h2>
+    <h1 id="msg" style="color:rgb(46, 50, 47) ;"></h1>
+    <br><br>
+    <div onclick="play()">
+        <button style="width: 100px; height: 100px;" id="b1">-</button>
+        <button style="width: 100px; height: 100px;" id="b2">-</button>
+        <button style="width: 100px; height: 100px;" id="b3">-</button><br>
+
+        <button style="width: 100px; height: 100px;" id="b4">-</button>
+        <button style="width: 100px; height: 100px;" id="b5">-</button>
+        <button style="width: 100px; height: 100px;" id="b6">-</button><br>
+
+        <button style="width: 100px; height: 100px;" id="b7">-</button>
+        <button style="width: 100px; height: 100px;" id="b8">-</button>
+        <button style="width: 100px; height: 100px;" id="b9">-</button>
+    </div>
+
+    <script>
+        let turn = "X"
+        let counter = 0
+        function play() {
+            if (event.target.innerText == "-") {
+                event.target.innerText = turn
+
+                turn = (turn == "X" ? "O" : "X")
+                msg.innerHTML = ` Turn of player ${turn}`
+                counter++
+
+                if (counter == 9) {
+                    msg.innerHTML = ` Tie`
+                }
+
+            }
+            checkWin()
+        }
+
+
+        function checkWin() {
+            if (b1.innerText == "X" && b2.innerText == "X" && b3.innerText == "X") {
+                msg.innerHTML = `The winner is ${"X"}`
+            } else if (b1.innerText == "O" && b2.innerText == "O" && b3.innerText == "O") {
+                msg.innerHTML = `The winner is ${"O"}`
+            }
+
+            if (b4.innerText == "X" && b5.innerText == "X" && b6.innerText == "X") {
+                msg.innerHTML = `The winner is ${"X"}`
+            } else if (b4.innerText == "O" && b5.innerText == "O" && b6.innerText == "O") {
+                msg.innerHTML = `The winner is ${"O"}`
+            }
+
+            if (b7.innerText == "X" && b8.innerText == "X" && b9.innerText == "X") {
+                msg.innerHTML = `The winner is ${"X"}`
+            } else if (b7.innerText == "O" && b8.innerText == "O" && b9.innerText == "O") {
+                msg.innerHTML = `The winner is ${"O"}`
+            }
+
+            if (b1.innerText == "X" && b4.innerText == "X" && b7.innerText == "X") {
+                msg.innerHTML = `The winner is ${"X"}`
+            } else if (b1.innerText == "O" && b4.innerText == "O" && b7.innerText == "O") {
+                msg.innerHTML = `The winner is ${"O"}`
+            }
+
+            if (b2.innerText == "X" && b5.innerText == "X" && b8.innerText == "X") {
+                msg.innerHTML = `The winner is ${"X"}`
+            } else if (b2.innerText == "O" && b5.innerText == "O" && b8.innerText == "O") {
+                msg.innerHTML = `The winner is ${"O"}`
+            }
+
+            if (b3.innerText == "X" && b6.innerText == "X" && b9.innerText == "X") {
+                msg.innerHTML = `The winner is ${"X"}`
+            } else if (b3.innerText == "O" && b6.innerText == "O" && b9.innerText == "O") {
+                msg.innerHTML = `The winner is ${"O"}`
+            }
+
+            if (b1.innerText == "X" && b5.innerText == "X" && b9.innerText == "X") {
+                msg.innerHTML = `The winner is ${"X"}`
+            } else if (b1.innerText == "O" && b5.innerText == "O" && b9.innerText == "O") {
+                msg.innerHTML = `The winner is ${"O"}`
+            }
+
+            if (b3.innerText == "X" && b5.innerText == "X" && b7.innerText == "X") {
+                msg.innerHTML = `The winner is ${"X"}`
+            } else if (b3.innerText == "O" && b5.innerText == "O" && b7.innerText == "O") {
+                msg.innerHTML = `The winner is ${"O"}`
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
